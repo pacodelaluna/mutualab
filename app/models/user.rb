@@ -1,8 +1,9 @@
 class User < ActiveRecord::Base
   belongs_to :contact
 
-  devise :database_authenticatable, :registerable, :omniauthable, :confirmable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable, :omniauthable, 
+         :confirmable, :recoverable, :rememberable, :trackable, :validatable,
+         :omniauth_providers => [:twitter]
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me

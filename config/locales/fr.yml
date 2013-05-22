@@ -1,0 +1,22 @@
+fr:
+  
+  layouts:
+    application:
+      sign_in: "Se Connecter"
+      sign_out: "Se Déconnecter"
+      sign_up: "S'inscrire"
+
+  devise:
+    registrations:
+      new:
+        title: "Inscription"
+        email: "Adresse email"
+        password: "Mot de passe"
+        password_confirmation: "Confirmation du mot de passe"
+        first_name: "Prénom"
+        last_name: "Nom"
+        birth_date: "Date de naissance"
+        bio: "Bio"
+        job_title: "Profession"
+        website: "Website"
+        mobile: "Mobile"
