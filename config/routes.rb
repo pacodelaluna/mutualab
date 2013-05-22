@@ -1,4 +1,16 @@
 Mutualab::Application.routes.draw do
+
+  devise_for :users
+
+  #root :to => "home#index"
+  root to: "home#index"
+  #root to: { controller: "home", action: "index" }
+
+  resources :entities
+  resources :contacts
+  resources :users
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
