@@ -1,5 +1,19 @@
 %h1 HomePage
 
+.nav_bar
+  - if user_signed_in?
+    = link_to "Logout", destroy_user_session_path, method: :delete
+  - else
+    = link_to "Login", new_user_session_path
+
+%br
+%br
+
+= flash_message
+
+%br
+%br
+
 .content
   %a{ href: users_path }
     Users List
