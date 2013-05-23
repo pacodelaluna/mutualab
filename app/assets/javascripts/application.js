@@ -13,3 +13,41 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function() {
+    $('#add_entity').click(function(event) {
+        event.preventDefault();
+        $('.entity_errors').html('');
+        if (($('#entity_existing_entity').val() == null) || ($('#entity_existing_entity').val() == '')) {
+            jQuery.ajax({
+                url:      '/entities',
+                type:     'POST',
+                dataType: 'json',
+                data: {
+                    entity: {
+                        name: $('#entity_name').val(),
+                        category: $('#entity_category').val()
+                    }
+                },
+                success:  function(data, textStatus, XMLHttpRequest) {
+                    entity = data;
+                    $('#entities_list').children().first().before('<div>'+entity['name']+'<input type="hidden" name="user[entity_ids][]" value="'+entity['id']+'"><button class="delete_entity">X</button></div>');
+                },
+                error:    function(jqXHR, status, error) {
+                    $(eval(jqXHR.responseText)).each(function(i, e) {
+                        $('.entity_errors').append('<div>'+e+'</div>');
+                    });
+                }
+            });
+        } else {
+            entity = $('#entity_existing_entity option:selected').first()[0];
+            console.log(entity);
+            $('#entities_list').children().first().before('<div>'+entity.text+'<input type="hidden" name="user[entity_ids][]" value="'+entity.value+'"><button class="delete_entity">X</button></div>');
+        }
+    });
+
+    $('.delete_entity').click(function(event) {
+        event.preventDefault();
+        console.log('TODO');
+    });
+})

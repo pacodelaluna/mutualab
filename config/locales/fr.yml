@@ -5,6 +5,7 @@ fr:
       sign_in: "Se Connecter"
       sign_out: "Se Déconnecter"
       sign_up: "S'inscrire"
+      edit_account: "Modifier mon compte"
 
   devise:
     registrations:
@@ -20,3 +21,28 @@ fr:
         job_title: "Profession"
         website: "Website"
         mobile: "Mobile"
+        entity_category: "Status"
+        entity_name: "Nom de la société"
+        existing_entity: "Société déjà renseignée"
+
+      edit:
+        title: "Inscription"
+        email: "Adresse email"
+        password: "Mot de passe <i>(leave blank if you don't want to change it)</i>"
+        password_confirmation: "Confirmation du mot de passe"
+        current_password: "Mot de passe actuel <i>(we need your current password to confirm your changes)</i>"
+
+  users:
+    contact_form:
+      first_name: "Prénom"
+      last_name: "Nom"
+      birth_date: "Date de naissance"
+      bio: "Bio"
+      job_title: "Profession"
+      website: "Website"
+      mobile: "Mobile"
+    entities_form:
+      entity_category: "Status"
+      entity_name: "Nom de la société"
+      existing_entity: "Société déjà renseignée"
+

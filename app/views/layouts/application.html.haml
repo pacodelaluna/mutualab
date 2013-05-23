@@ -13,6 +13,8 @@
     %top_bar
       - if user_signed_in?
         = link_to t('.sign_out'), destroy_user_session_path, method: :delete
+        |
+        = link_to t('.edit_account'), edit_user_registration_path
       - else
         = link_to t('.sign_in'), new_user_session_path
         |
