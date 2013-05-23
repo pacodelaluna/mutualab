@@ -1,0 +1,25 @@
+.errors
+  = form_errors_for(f.object)
+.subset.user
+  .field
+    = f.label :email, t('.email')
+    %br
+    = f.email_field :email, :autofocus => true
+
+  .field
+    = f.label :role, t('.role')
+    %br
+    = f.select :role, USER_ROLES_LIST.map{ |e| [e, e]}
+  .field
+    = f.label :password_confirmation, t('.password_confirmation')
+    %br
+    = f.password_field :password_confirmation
+
+.subset.contact
+  = render partial: 'users/contact_form', locals: { f: f }
+
+.subset.entity
+  = render partial: 'users/entities_form', locals: { f: f }
+
+.submit.button
+  = f.submit

@@ -4,8 +4,12 @@ Mutualab::Application.routes.draw do
 
   devise_for :users
 
-  resources :entities
-  resources :users
+  
+  namespace :admin do
+    match 'dashboard' => "dashboard#show", as: :dashboard
+    resources :entities
+    resources :users
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

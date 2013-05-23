@@ -10,11 +10,14 @@
 
   %body
   
-    %top_bar
+    %header
       - if user_signed_in?
         = link_to t('.sign_out'), destroy_user_session_path, method: :delete
         |
         = link_to t('.edit_account'), edit_user_registration_path
+        - if current_user_is_admin?
+          |
+          = link_to "Admin", admin_dashboard_url
       - else
         = link_to t('.sign_in'), new_user_session_path
         |
@@ -29,3 +32,6 @@
       
     %main
       = yield
+    
+    %footer
+      = "Coworking Lille"

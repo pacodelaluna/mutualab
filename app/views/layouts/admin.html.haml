@@ -1,0 +1,34 @@
+%html
+
+  %head
+    %title
+      Mutualab Admin
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body
+
+    %header
+      = link_to t('.sign_out'), destroy_user_session_path, method: :delete
+      |
+      = link_to t('.home_page'), root_url
+      |
+      = "(#{ language_selection } )".html_safe
+    %br
+    %br
+    = flash_message
+    %br
+    %br
+    .nav_bar
+      %a{ href: admin_users_path }
+        Users List
+      %br
+      %a{ href: admin_entities_path }
+        Entities List
+
+    %main
+      = yield
+
+    %footer
+      = "Coworking Lille"

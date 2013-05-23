@@ -2,7 +2,6 @@ class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
       t.string :role
-      t.boolean :admin
 
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
@@ -42,7 +41,6 @@ class CreateUsers < ActiveRecord::Migration
       t.date :birth_date
       t.text :bio
       t.string :job_title
-      t.string :entity_id
       t.string :website
       t.string :mobile
       t.string :tags
