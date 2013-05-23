@@ -7,6 +7,11 @@ module ApplicationHelper
     return content_tag(:div, res.html_safe, :id => 'flash_message')
   end
 
+  def language_selection
+    res = [:en, :fr].map{ |l| link_to(l.to_s, "#{request.url.split('?').first}?new_locale=#{l.to_s}", :class => (I18n.locale == l ? 'selected' : '')) }.join(' | ')
+    return res.html_safe.html_safe
+  end
+
   def form_errors_for(object)
     res = ''
     if object.errors.any?

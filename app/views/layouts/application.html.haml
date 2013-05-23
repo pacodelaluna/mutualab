@@ -19,8 +19,11 @@
         = link_to t('.sign_in'), new_user_session_path
         |
         = link_to t('.sign_up'), new_user_registration_path
+      |
+      = link_to t('.home_page'), root_url
+      |
+      = "(#{ language_selection } )".html_safe
     %br
-    = I18n.locale
     %br
     = flash_message
       
