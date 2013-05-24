@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :users_entities
+  has_many :users_entities, dependent: :destroy
   has_many :entities, through: :users_entities
 
   devise :database_authenticatable, :registerable, :omniauthable, 
