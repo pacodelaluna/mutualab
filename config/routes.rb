@@ -6,7 +6,7 @@ Mutualab::Application.routes.draw do
   resources :entities, only: [:create]
   
   namespace :admin do
-    match 'dashboard' => "dashboard#show", as: :dashboard
+    match '' => "dashboard#show", as: :root
     resources :entities
     resources :users
   end

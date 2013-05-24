@@ -17,7 +17,7 @@
         = link_to t('.edit_account'), edit_user_registration_path
         - if current_user_is_admin?
           |
-          = link_to "Admin", admin_dashboard_url
+          = link_to "Admin", admin_root_url
       - else
         = link_to t('.sign_in'), new_user_session_path
         |
