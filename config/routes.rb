@@ -3,7 +3,7 @@ Mutualab::Application.routes.draw do
   root to: "home#index"
 
   devise_for :users
-
+  resources :entities, only: [:create]
   
   namespace :admin do
     match 'dashboard' => "dashboard#show", as: :dashboard
