@@ -13,6 +13,14 @@
       %div
         = "Currently waiting confirmation for: #{ resource.unconfirmed_email }"
     .field
+      = f.label :avatar, t('.avatar').html_safe
+      - if f.object.avatar.url || f.object.gravatar_url
+        .avatar
+          = image_tag (f.object.avatar.url(:medium) || f.object.gravatar_url)
+      - else
+        %br
+      = f.file_field :avatar
+    .field
       = f.label :password, t('.password').html_safe
       %br
       = f.password_field :password, :autocomplete => "off"

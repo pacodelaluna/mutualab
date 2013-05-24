@@ -14,23 +14,15 @@ fr:
         email: "Adresse email"
         password: "Mot de passe"
         password_confirmation: "Confirmation du mot de passe"
-        first_name: "Prénom"
-        last_name: "Nom"
-        birth_date: "Date de naissance"
-        bio: "Bio"
-        job_title: "Profession"
-        website: "Website"
-        mobile: "Mobile"
-        entity_category: "Status"
-        entity_name: "Nom de la société"
-        existing_entity: "Société déjà renseignée"
+        avatar: "Avatar"# <i>(if you let it empty, the app will check if a gravatar is linked to your email account)</i>"
 
       edit:
-        title: "Inscription"
+        title: "Modification de mon compte"
         email: "Adresse email"
         password: "Mot de passe <i>(leave blank if you don't want to change it)</i>"
         password_confirmation: "Confirmation du mot de passe"
         current_password: "Mot de passe actuel <i>(we need your current password to confirm your changes)</i>"
+        avatar: "Avatar"
 
   users:
     contact_form:
@@ -45,4 +37,12 @@ fr:
       entity_category: "Status"
       entity_name: "Nom de la société"
       existing_entity: "Société déjà renseignée"
+
+  admin:
+    users:
+      form:
+        email: "Adresse email"
+        password: "Mot de passe"
+        password_confirmation: "Confirmation du mot de passe"
+        avatar: "Avatar"
 

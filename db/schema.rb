@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(:version => 20130522151005) do
 
   create_table "users", :force => true do |t|
     t.string   "role"
-    t.boolean  "admin"
     t.string   "email",                  :default => "", :null => false
     t.string   "password"
     t.string   "encrypted_password",     :default => "", :null => false
@@ -40,10 +39,10 @@ ActiveRecord::Schema.define(:version => 20130522151005) do
     t.string   "unconfirmed_email"
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "avatar"
     t.date     "birth_date"
     t.text     "bio"
     t.string   "job_title"
-    t.string   "entity_id"
     t.string   "website"
     t.string   "mobile"
     t.string   "tags"

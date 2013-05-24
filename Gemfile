@@ -13,6 +13,9 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 gem 'oauth2'
+gem 'gravatar-ultimate'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :production do
   gem 'mysql2'

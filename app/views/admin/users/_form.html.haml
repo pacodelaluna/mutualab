@@ -5,7 +5,14 @@
     = f.label :email, t('.email')
     %br
     = f.email_field :email, :autofocus => true
-
+  .field
+    = f.label :avatar, t('.avatar').html_safe
+    - if f.object.avatar.url || f.object.gravatar_url
+      .avatar
+        = image_tag (f.object.avatar.url(:medium) || f.object.gravatar_url)
+    - else
+      %br
+    = f.file_field :avatar
   .field
     = f.label :role, t('.role')
     %br
