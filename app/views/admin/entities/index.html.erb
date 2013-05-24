@@ -14,7 +14,7 @@
     <td><%= entity.name %></td>
     <td><%= entity.category %></td>
     <td><%= link_to 'Show', [:admin, entity] %></td>
-    <td><%= link_to 'Edit', admin_edit_entity_path(entity) %></td>
+    <td><%= link_to 'Edit', edit_admin_entity_path(entity) %></td>
     <td><%= link_to 'Destroy', [:admin, entity], method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>

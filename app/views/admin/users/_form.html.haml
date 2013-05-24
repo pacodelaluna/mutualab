@@ -1,32 +1,33 @@
-.errors
-  = form_errors_for(f.object)
-.subset.user
-  .field
-    = f.label :email, t('.email')
-    %br
-    = f.email_field :email, :autofocus => true
-  .field
-    = f.label :avatar, t('.avatar').html_safe
-    - if f.object.avatar.url || f.object.gravatar_url
-      .avatar
-        = image_tag (f.object.avatar.url(:medium) || f.object.gravatar_url)
-    - else
+= form_for([:admin, @user]) do |f|
+  .errors
+    = form_errors_for(f.object)
+  .subset.user
+    .field
+      = f.label :email, t('.email')
       %br
-    = f.file_field :avatar
-  .field
-    = f.label :role, t('.role')
-    %br
-    = f.select :role, USER_ROLES_LIST.map{ |e| [e, e]}
-  .field
-    = f.label :password_confirmation, t('.password_confirmation')
-    %br
-    = f.password_field :password_confirmation
+      = f.email_field :email, :autofocus => true
+    .field
+      = f.label :avatar, t('.avatar').html_safe
+      - if f.object.avatar.url || f.object.gravatar_url
+        .avatar
+          = image_tag (f.object.avatar.url(:medium) || f.object.gravatar_url)
+      - else
+        %br
+      = f.file_field :avatar
+    .field
+      = f.label :role, t('.role')
+      %br
+      = f.select :role, USER_ROLES_LIST.map{ |e| [e, e]}
+    .field
+      = f.label :password_confirmation, t('.password_confirmation')
+      %br
+      = f.password_field :password_confirmation
 
-.subset.contact
-  = render partial: 'users/contact_form', locals: { f: f }
+  .subset.contact
+    = render partial: 'users/contact_form', locals: { f: f }
 
-.subset.entity
-  = render partial: 'users/entities_form', locals: { f: f }
+  .subset.entity
+    = render partial: 'users/entities_form', locals: { f: f }
 
-.submit.button
-  = f.submit
+  .submit.button
+    = f.submit

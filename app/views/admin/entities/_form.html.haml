@@ -1,0 +1,14 @@
+= form_for([:admin, @entity]) do |f|
+  .errors
+    = form_errors_for(f.object)
+  .subset
+    .field
+      = f.label :category, t('.category')
+      %br
+      = f.text_field :category
+    .field
+      = f.label :name, t('.name')
+      %br
+      = f.text_field :name
+    .submit.button
+      = f.submit
